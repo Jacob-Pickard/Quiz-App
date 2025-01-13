@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Box className="app-container">
           <Typography variant="h2" gutterBottom>
-            PMBOK Quizzing
+            PMP Quizzing
           </Typography>
           <Typography variant='h4' gutterBottom>
             by Jacob Pickard

@@ -18,6 +18,10 @@ const questions = {
     { question: 'What is the first phase?', options: ['Planning', 'Initiation', 'Execution', 'Testing'], answer: 1 },
     { question: 'What is the purpose of a Sprint Review?', options: ['To review the project costs and budget', 'To ensure the project stays on track with the initial timeline', 'To showcase the work completed during the sprint and gather feedback from stakeholders', 'To define project requirements for the upcoming sprint.'], answer: 2 },
   ],
+
+/*scenario: [
+  { question: 'Question here', options: ['0','1','2','3'], answer: 0-3 here},
+], */
 };
 
 function QuizPage() {

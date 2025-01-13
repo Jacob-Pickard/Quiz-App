@@ -6,6 +6,9 @@ Log - 1/13/25
 
 Backlog
     - Features
+        [X] Clarify the quiz categories to be more specific, make sure they actually relate to the PMP
+        [X] Create a Scenario based question category
+        [X] Create a feature that randomizes the order of the questions
         [X] Create a button that clears the locally stored JSON for the leaderboard
         [X] Add some sort of text that tells you when you get a question correct/incorrect
         [X] Add a way to pre-select your name for the leaderboard
@@ -13,6 +16,6 @@ Backlog
         [X] CSS & UI/UX updates, website looks atrocious right now
         [X] An animation which pops up to show you how many points you gained from answer a question
     - Technical Debt
-        [X] Refactor QuizPage, maybe seperate the questions into their own JSX file so as to prevent clutter.
+        [X] Refactor QuizPage, seperate the questions into their own JSX file so as to prevent clutter.
         [X] Weird error on line #5 in App.jsx that should probably be dealt with at some point even though it doesnt cause any issues (yet)
         [X] Do QuizPage and Leaderboard need to be in a components folder?
