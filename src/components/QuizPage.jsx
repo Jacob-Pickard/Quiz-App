@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography, Card, CardContent } from '@mui/material';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import '/src/App.css';
+import './QuizPage.css';
 
 const questions = {
   agile: [
@@ -17,20 +17,23 @@ const questions = {
     { question: 'Which of the following is a characteristic of the Waterfall model?', options: ['Iterative and incremental progress through the project lifecycle', 'Flexible scope and continuous delivery', 'Phases are completed in a linear and sequential manner', 'Emphasis on cross-functional team collaboration'], answer: 2 },
     { question: 'What is the first phase?', options: ['Planning', 'Initiation', 'Execution', 'Testing'], answer: 1 },
     { question: 'What is the purpose of a Sprint Review?', options: ['To review the project costs and budget', 'To ensure the project stays on track with the initial timeline', 'To showcase the work completed during the sprint and gather feedback from stakeholders', 'To define project requirements for the upcoming sprint.'], answer: 2 },
+    { question: 'During a project, a stakeholder requests a change. What is the first step?', options: ['Approve the change', 'Analyze the impact', 'Implement immediately', 'Reject the change'], answer: 1 },
+    { question: 'A team member reports a delay due to resource unavailability. What should the project manager do?', options: ['Reassign resources', 'Escalate to sponsor', 'Update the schedule', 'Conduct a team meeting'], answer: 3 },
   ],
-
-/*scenario: [
-  { question: 'Question here', options: ['0','1','2','3'], answer: 0-3 here},
-], */
+  scenario: [
+    { question: 'During a project, a stakeholder requests a change. What is the first step?', options: ['Approve the change', 'Analyze the impact', 'Implement immediately', 'Reject the change'], answer: 1 },
+    { question: 'A team member reports a delay due to resource unavailability. What should the project manager do?', options: ['Reassign resources', 'Escalate to sponsor', 'Update the schedule', 'Conduct a team meeting'], answer: 3 },
+  ],
 };
 
 function QuizPage() {
   const { category } = useParams();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(10);
   const [completed, setCompleted] = useState(false);
   const [quizLocked, setQuizLocked] = useState(false);
+  const [answerFeedback, setAnswerFeedback] = useState(''); // Feedback state
   const navigate = useNavigate();
 
   const questionSet = questions[category];
@@ -49,21 +52,30 @@ function QuizPage() {
 
   const handleAnswer = (index) => {
     if (quizLocked) return;
-    if (index === questionSet[currentQuestion].answer) {
+
+    const correctAnswer = questionSet[currentQuestion].answer;
+    if (index === correctAnswer) {
       setScore((prev) => prev + timer);
+      setAnswerFeedback('Correct!'); // Feedback for correct answer
+    } else {
+      setAnswerFeedback('Incorrect!'); // Feedback for incorrect answer
     }
-    setTimer(30);
+
+    setTimer(10);
     if (currentQuestion < questionSet.length - 1) {
-      setCurrentQuestion((prev) => prev + 1);
+      setTimeout(() => {
+        setAnswerFeedback(''); // Reset feedback after a short delay
+        setCurrentQuestion((prev) => prev + 1);
+      }, 1000); // Delay for feedback visibility
     } else {
       setCompleted(true);
       setQuizLocked(true);
       const userName = prompt('Enter your name for the leaderboard:');
       if (userName) {
-        const scores = JSON.parse(localStorage.getItem('Leaderboard')) || [];
+        const scores = JSON.parse(localStorage.getItem('leaderboard')) || [];
         scores.push({ name: userName, score, category });
-        localStorage.setItem('Leaderboard', JSON.stringify(scores));
-        navigate('/Leaderboard');
+        localStorage.setItem('leaderboard', JSON.stringify(scores));
+        navigate('/leaderboard');
       }
     }
   };
@@ -86,7 +98,7 @@ function QuizPage() {
       <Box>
         <Typography variant="h4">Quiz Completed!</Typography>
         <Typography>Your Score: {score}</Typography>
-        <Button component={Link} to="/Leaderboard" variant="contained" sx={{ mt: 2 }}>
+        <Button component={Link} to="/leaderboard" variant="contained" sx={{ mt: 2 }}>
           View Leaderboard
         </Button>
         <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
@@ -114,6 +126,18 @@ function QuizPage() {
             </Button>
           ))}
         </Box>
+        {answerFeedback && (
+          <Typography
+            variant="h6"
+            sx={{
+              color: answerFeedback === 'Correct!' ? 'green' : 'red',
+              mt: 2,
+              fontWeight: 'bold',
+            }}
+          >
+            {answerFeedback}
+          </Typography>
+        )}
         <Typography>Time Remaining: {timer} seconds</Typography>
         <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
           Back to Home

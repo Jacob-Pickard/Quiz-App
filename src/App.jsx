@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { ThemeProvider, createTheme, CssBaseline, Box, Button, Typography } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline, Box, Button, Typography, Grid } from '@mui/material';
 import QuizPage from './components/QuizPage';
-import Leaderboard from './components/Leaderboard.jsx';
+import Leaderboard from './components/Leaderboard';
 import './App.css';
 
 const theme = createTheme({
@@ -19,15 +19,12 @@ function App() {
       <Router>
         <Box className="app-container">
           <Typography variant="h2" gutterBottom>
-            PMP Quizzing
-          </Typography>
-          <Typography variant='h4' gutterBottom>
-            by Jacob Pickard
+            PMBOK Quizzing Website
           </Typography>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quiz/:category" element={<QuizPage />} />
-            <Route path="/Leaderboard" element={<Leaderboard />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
         </Box>
       </Router>
@@ -38,20 +35,38 @@ function App() {
 function Home() {
   return (
     <Box className="home-container">
-      <Button variant="contained" component={Link} to="/quiz/agile" sx={{ m: 2 }}>
-        Agile Quiz
-      </Button>
-      <Button variant="contained" component={Link} to="/quiz/waterfall" sx={{ m: 2 }}>
-        Waterfall Quiz
-      </Button>
-      <Button variant="contained" component={Link} to="/quiz/full" sx={{ m: 2 }}>
-        Full Test
-      </Button>
-      <Button variant="outlined" component={Link} to="/Leaderboard" sx={{ m: 2 }}>
+      <div className="home-button-grid">
+        <Grid item xs={6} sm={6} md={6}>
+          <Button variant="contained" component={Link} to="/quiz/agile" className="MuiButton-root">
+            Agile Quiz
+          </Button>
+        </Grid>
+        <Grid item xs={6} sm={6} md={6}>
+          <Button variant="contained" component={Link} to="/quiz/waterfall" className="MuiButton-root">
+            Waterfall Quiz
+          </Button>
+        </Grid>
+        <Grid item xs={6} sm={6} md={6}>
+          <Button variant="contained" component={Link} to="/quiz/scenario" className="MuiButton-root">
+            Scenario-Based Questions
+          </Button>
+        </Grid>
+        <Grid item xs={6} sm={6} md={6}>
+        <Button variant="contained" component={Link} to="/quiz/full" className="MuiButton-root">
+            Full Test
+          </Button>
+        </Grid>
+      </div>
+      <Button variant="outlined" component={Link} to="/leaderboard" className="leaderboard-button">
         View Leaderboard
       </Button>
     </Box>
   );
 }
+
+
+
+
+
 
 export default App;
