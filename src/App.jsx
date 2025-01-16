@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline, Box, Button, Typography, Grid } from '@mui/material';
 import QuizPage from './components/QuizPage';
@@ -13,6 +13,21 @@ const theme = createTheme({
 });
 
 function App() {
+  const [userName, setUserName] = useState('');
+  const [nameSubmitted, setNameSubmitted] = useState(false);
+
+  const handleNameChange = (e) => {
+    setUserName(e.target.value);
+    setNameSubmitted(false);
+  };
+
+  const handleNameSubmit = (e) => {
+    e.preventDefault();
+    if (userName.trim()) {
+      setNameSubmitted(true);
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -22,8 +37,8 @@ function App() {
             PMBOK Quizzing Website
           </Typography>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/quiz/:category" element={<QuizPage />} />
+            <Route path="/" element={<Home userName={userName} handleNameChange={handleNameChange} handleNameSubmit={handleNameSubmit} nameSubmitted={nameSubmitted} />} />
+            <Route path="/quiz/:category" element={<QuizPage userName={userName} />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
         </Box>
@@ -32,9 +47,26 @@ function App() {
   );
 }
 
-function Home() {
+function Home({ userName, handleNameChange, handleNameSubmit, nameSubmitted }) {
   return (
     <Box className="home-container">
+      <form onSubmit={handleNameSubmit} className="name-form">
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={userName}
+          onChange={handleNameChange}
+          className="name-input"
+        />
+        <Button type="submit" variant="contained" className="submit-name-button">
+          Submit Name
+        </Button>
+        {nameSubmitted && (
+          <Typography variant="body1" className="name-confirmation">
+            Name submitted successfully!
+          </Typography>
+        )}
+      </form>
       <div className="home-button-grid">
         <Grid item xs={6} sm={6} md={6}>
           <Button variant="contained" component={Link} to="/quiz/agile" className="MuiButton-root">
@@ -63,10 +95,5 @@ function Home() {
     </Box>
   );
 }
-
-
-
-
-
 
 export default App;

@@ -10,6 +10,11 @@ function Leaderboard() {
     setScores(storedScores);
   }, []);
 
+  const clearScores = () => {
+    localStorage.removeItem('leaderboard');
+    setScores([]);
+  };
+
   const categories = ['agile', 'waterfall', 'full', 'scenario'];
 
   return (
@@ -36,6 +41,9 @@ function Leaderboard() {
       ))}
       <Button component={Link} to="/" variant="contained" sx={{ mt: 3 }}>
         Back to Home
+      </Button>
+      <Button onClick={clearScores} variant="contained" color="secondary" sx={{ mt: 3, ml: 2 }}>
+        Clear Scores
       </Button>
     </Box>
   );
