@@ -31,7 +31,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename="/Quiz-App">
         <Box className="app-container">
           <Typography variant="h2" gutterBottom>
             PMBOK Quizzing Website
