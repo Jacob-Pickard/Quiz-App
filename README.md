@@ -1,3 +1,9 @@
+Log - 1/21/25
+    [X] CSS Updates, looks much nicer!
+    [X] Changed capitlization on the buttons so that they are not in All-Caps
+    [X] An animation which pops up to show you how many points you gained from answering a question.
+
+
 Log - 1/15/25
     [X] Fixed the bug with the Incorrect/Correct indicator
     [X] Removed the redundant full category in the JSON.
@@ -21,14 +27,15 @@ Backlog
         (None at the moment)
     - Features
         [X] Add more questions
-        [X] CSS & UI/UX updates, website looks atrocious right now
-        [X] An animation which pops up to show you how many points you gained from answer a question
     - Technical Debt
         [X] Refactor QuizPage, seperate the questions into their own JSX (or JSON?) file so as to prevent clutter.
         [X] Do QuizPage and Leaderboard need to be in a components folder?
 
 Completed
     - Features
+        [X] An animation which pops up to show you how many points you gained from answering a question.
+        [X] Capitlization on the buttons so that they are not in All-Caps
+        [X] CSS & UI/UX updates, website looks atrocious right now
         [X] Add a way to pre-select your name for the leaderboard
         [X] Create a button that clears the locally stored JSON for the leaderboard
         [X] Create a feature that randomizes the order of the questions

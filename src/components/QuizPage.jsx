@@ -33,6 +33,8 @@ function QuizPage({ userName }) {
   const [completed, setCompleted] = useState(false);
   const [quizLocked, setQuizLocked] = useState(false);
   const [answerFeedback, setAnswerFeedback] = useState(''); // Feedback state
+  const [pointsGained, setPointsGained] = useState(0); // Points gained state
+  const [showPoints, setShowPoints] = useState(false); // Show points animation state
   const navigate = useNavigate();
 
 const questionSet = questions[category];
@@ -66,7 +68,10 @@ const handleAnswer = (index) => {
 
   const correctAnswer = questionSet[currentQuestion].answer;
   if (index === correctAnswer) {
-    setScore((prev) => prev + timer);
+    const points = timer;
+    setScore((prev) => prev + points);
+    setPointsGained(points);
+    setShowPoints(true);
     setAnswerFeedback('Correct!'); // Feedback for correct answer
   } else {
     setAnswerFeedback('Incorrect!'); // Feedback for incorrect answer
@@ -77,6 +82,7 @@ const handleAnswer = (index) => {
   setTimeout(() => {
     setQuizLocked(false);
     setAnswerFeedback(''); // Reset feedback after a short delay
+    setShowPoints(false); // Hide points animation
     if (currentQuestion < questionSet.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
       setTimer(30); // Reset timer for the next question
@@ -142,6 +148,14 @@ const handleAnswer = (index) => {
             }}
           >
             {answerFeedback}
+          </Typography>
+        )}
+        {showPoints && (
+          <Typography
+            variant="h4"
+            className="points-gained"
+          >
+            +{pointsGained} points!
           </Typography>
         )}
         <Typography>Time Remaining: {timer} seconds</Typography>
