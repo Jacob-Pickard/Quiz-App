@@ -1,3 +1,4 @@
+/* Container for the leaderboard */
 .leaderboard-container {
   text-align: center;
   padding: 2rem;
@@ -14,6 +15,7 @@
   margin: auto;
 }
 
+/* Individual category within the leaderboard */
 .leaderboard-category {
   width: 100%;
   max-width: 600px;
@@ -25,21 +27,25 @@
   transition: transform 0.3s;
 }
 
+/* Hover effect for leaderboard category */
 .leaderboard-category:hover {
   transform: translateY(-5px);
 }
 
+/* Heading within the leaderboard category */
 .leaderboard-category h5 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   color: #333;
 }
 
+/* Unordered list within the leaderboard category */
 .leaderboard-category ul {
   list-style: none;
   padding: 0;
 }
 
+/* List items within the leaderboard category */
 .leaderboard-category li {
   padding: 0.5rem 0;
   font-size: 1.1rem;
@@ -47,16 +53,19 @@
   text-transform: capitalize; /* Ensure correct capitalization */
 }
 
+/* Remove border from the last list item */
 .leaderboard-category li:last-child {
   border-bottom: none;
 }
 
+/* Container for leaderboard buttons */
 .leaderboard-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 }
 
+/* Styling for buttons within the leaderboard */
 .leaderboard-buttons .MuiButton-root {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -64,6 +73,7 @@
   transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Hover effect for buttons within the leaderboard */
 .leaderboard-buttons .MuiButton-root:hover {
   transform: translateY(-3px);
 }

@@ -6,11 +6,13 @@ import './Leaderboard.css';
 function Leaderboard() {
   const [scores, setScores] = useState([]);
 
+  // Load scores from localStorage when the component mounts
   useEffect(() => {
     const storedScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
     setScores(storedScores);
   }, []);
 
+  // Clear scores from localStorage and state
   const clearScores = () => {
     localStorage.removeItem('leaderboard');
     setScores([]);

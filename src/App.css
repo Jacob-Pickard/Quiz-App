@@ -72,6 +72,25 @@
   transform: translateY(-3px);
 }
 
+.blog-button {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background-color: #1976d2;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+  text-transform: none; /* Ensure correct capitalization */
+  margin-bottom: 1rem; /* Add margin to separate from other buttons */
+}
+
+.blog-button:hover {
+  background-color: #155a9c;
+  transform: translateY(-3px);
+}
+
 .name-form {
   display: flex;
   flex-direction: column;

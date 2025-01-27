@@ -1,8 +1,19 @@
+Log - 1/27/25
+    [X] Seperated the questions into their own JS file.
+    [X] Added comments explaining the code throughout all files
+
+Log - 1/23/25
+    [X] Added 3 more questions to each category, totalling 15 questions now!
+    [X] Randomization re-introduced. Seems that AI may have inadvertantly removed it at some point.
+
+Log - 1/22/25
+    [X] Added the blog page for the purpose of todays class. Looks pretty nice! Even has a read more/read less function!
+
 Log - 1/21/25
     [X] CSS Updates, looks much nicer!
     [X] Changed capitlization on the buttons so that they are not in All-Caps
     [X] An animation which pops up to show you how many points you gained from answering a question.
-
+    [X] Deployed my website on GH Pages!
 
 Log - 1/15/25
     [X] Fixed the bug with the Incorrect/Correct indicator
@@ -30,6 +41,7 @@ Backlog
     - Technical Debt
         [X] Refactor QuizPage, seperate the questions into their own JSX (or JSON?) file so as to prevent clutter.
         [X] Do QuizPage and Leaderboard need to be in a components folder?
+        [X] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
 
 Completed
     - Features

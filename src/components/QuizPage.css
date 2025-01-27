@@ -1,3 +1,4 @@
+/* Styles for the quiz card container */
 .quiz-card {
   margin: auto;
   max-width: 600px;
@@ -9,10 +10,12 @@
   transition: transform 0.3s;
 }
 
+/* Hover effect for the quiz card */
 .quiz-card:hover {
   transform: translateY(-5px);
 }
 
+/* Styles for the buttons inside the quiz card */
 .quiz-card .MuiButton-root {
   width: 100%;
   padding: 16px;
@@ -26,15 +29,18 @@
   text-transform: capitalize; /* Ensure correct capitalization */
 }
 
+/* Hover effect for the buttons */
 .quiz-card .MuiButton-root:hover {
   background-color: #155a9c;
   transform: translateY(-3px);
 }
 
+/* Remove margin from the last button */
 .quiz-card .MuiButton-root:last-child {
   margin-bottom: 0;
 }
 
+/* Styles for the feedback text */
 .quiz-card .feedback {
   font-size: 1.2rem;
   font-weight: bold;
@@ -42,16 +48,19 @@
   color: green;
 }
 
+/* Styles for incorrect feedback text */
 .quiz-card .feedback.incorrect {
   color: red;
 }
 
+/* Styles for points gained text */
 .points-gained {
   color: green;
   font-weight: bold;
   animation: pop-up 1s ease-in-out;
 }
 
+/* Keyframes for pop-up animation */
 @keyframes pop-up {
   0% {
     transform: scale(0);
