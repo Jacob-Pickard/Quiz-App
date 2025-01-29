@@ -1,3 +1,15 @@
+Log - 1/29/25
+    [X] Evened all topics out to 50 questions per.
+    [X] Tried to remove all duplicate questions
+    [X] Added a question counter for when you're in a quiz.
+
+Log - 1/28/25
+    [X] Added lots of questions! ChatGPT was not doing everything at once so other categories have more or less than others.
+        - agile has 40
+        - waterfall has 25
+        - scenario has 24
+    [X] - Factored out the questions into seperate files.
+
 Log - 1/27/25
     [X] Seperated the questions into their own JS file.
     [X] Added comments explaining the code throughout all files
@@ -39,6 +51,8 @@ Backlog
     - Features
         [X] Add more questions
     - Technical Debt
+        [X] Rename index.js in questions folder to be something more descriptive
+        [X] Make the quiz question components into js
         [X] Refactor QuizPage, seperate the questions into their own JSX (or JSON?) file so as to prevent clutter.
         [X] Do QuizPage and Leaderboard need to be in a components folder?
         [X] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
@@ -55,7 +69,10 @@ Completed
         [X] Clarify the quiz categories to be more specific, make sure they actually relate to the PMP
         [X] Create a Scenario based question category
     - Technical Debt
+        [X] Refactored the questions into seperate files.
         [X] Weird error on line #5 in App.jsx that should probably be dealt with at some point even though it doesnt cause any issues (yet)
         [X] Refactor the full quiz category? Seems like I should not have to have a 4th category in the code. Should be able to pull from the original 3 categories.
     - Bug
         [X] The incorrect/correct indicator does not appear on the last question as the quiz summary and leaderboard popup overtakes it
+
+Question generation prompt: Here is my current JSON of 40 waterfall questions for my quizzing app. They are all relating to the waterfall framework, and are meant to help you study for the PMBOK 7th edition PMP exam. I would like for you to create 10 new questions that fit the JSON format, and make sure that they are not redundant/repeated questions.

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography, Card, CardContent } from '@mui/material';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import questions from './questions.jsx';
+import questions from './questions';
 import './QuizPage.css';
 
 // Function to shuffle an array
@@ -122,7 +122,7 @@ function QuizPage({ userName }) {
     <Card className="quiz-card">
       <CardContent>
         <Typography variant="h5">
-          Question {currentQuestion + 1}: {shuffledQuestions[currentQuestion].question}
+          Question {currentQuestion + 1} of {shuffledQuestions.length}: {shuffledQuestions[currentQuestion].question}
         </Typography>
         <Box>
           {shuffledQuestions[currentQuestion].options.map((option, index) => (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography, Button, Card, CardContent } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './BlogPage.css';
@@ -9,6 +9,9 @@ function BlogPage() {
       <Typography variant="h4" gutterBottom>
         Blog Posts
       </Typography>
+      <BlogPost title="JSON Demonstration" date="January 28, 2025">
+        <WeatherGrabber/>
+      </BlogPost>
       <BlogPost title="Understanding Agile Methodology" date="January 22, 2025">
         Agile methodology is a practice that promotes continuous iteration of development and testing throughout the software development lifecycle of the project. Agile methodology is a practice that promotes continuous iteration of development and testing throughout the software development lifecycle of the project.
       </BlogPost>
@@ -50,6 +53,16 @@ function BlogPost({ title, date, children }) {
         </Button>
       </CardContent>
     </Card>
+  );
+}
+
+function WeatherGrabber () {
+const [weather, SetWeather] = React.useState(null)
+
+  return (
+    <>
+      Weather Forecast
+    </>
   );
 }
 
