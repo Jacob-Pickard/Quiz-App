@@ -119,49 +119,60 @@ function QuizPage({ userName }) {
 
   // Render the current question
   return (
-    <Card className="quiz-card">
-      <CardContent>
-        <Typography variant="h5">
-          Question {currentQuestion + 1} of {shuffledQuestions.length}: {shuffledQuestions[currentQuestion].question}
-        </Typography>
-        <Box>
-          {shuffledQuestions[currentQuestion].options.map((option, index) => (
-            <Button
-              key={index}
-              variant="contained"
-              onClick={() => handleAnswer(index)}
-              sx={{ m: 1 }}
+    <Box className="quiz-container">
+      <Card className="info-card">
+        <CardContent>
+          <Typography variant="h4" className="current-score">
+            Current Score: {score}
+          </Typography>
+          <Typography variant="h5" className="quiz-timer">
+            Time Remaining: {timer} seconds
+          </Typography>
+        </CardContent>
+      </Card>
+      <Card className="quiz-card">
+        <CardContent>
+          <Typography variant="h5">
+            Question {currentQuestion + 1} of {shuffledQuestions.length}: {shuffledQuestions[currentQuestion].question}
+          </Typography>
+          <Box>
+            {shuffledQuestions[currentQuestion].options.map((option, index) => (
+              <Button
+                key={index}
+                variant="contained"
+                onClick={() => handleAnswer(index)}
+                sx={{ m: 1 }}
+              >
+                {option}
+              </Button>
+            ))}
+          </Box>
+          {answerFeedback && (
+            <Typography
+              variant="h6"
+              sx={{
+                color: answerFeedback === 'Correct!' ? 'green' : 'red',
+                mt: 2,
+                fontWeight: 'bold',
+              }}
             >
-              {option}
-            </Button>
-          ))}
-        </Box>
-        {answerFeedback && (
-          <Typography
-            variant="h6"
-            sx={{
-              color: answerFeedback === 'Correct!' ? 'green' : 'red',
-              mt: 2,
-              fontWeight: 'bold',
-            }}
-          >
-            {answerFeedback}
-          </Typography>
-        )}
-        {showPoints && (
-          <Typography
-            variant="h4"
-            className="points-gained"
-          >
-            +{pointsGained} points!
-          </Typography>
-        )}
-        <Typography>Time Remaining: {timer} seconds</Typography>
-        <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
-          Back to Home
-        </Button>
-      </CardContent>
-    </Card>
+              {answerFeedback}
+            </Typography>
+          )}
+          {showPoints && (
+            <Typography
+              variant="h4"
+              className="points-gained"
+            >
+              +{pointsGained} points!
+            </Typography>
+          )}
+        </CardContent>
+      </Card>
+      <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
+        Back to Home
+      </Button>
+    </Box>
   );
 }
 

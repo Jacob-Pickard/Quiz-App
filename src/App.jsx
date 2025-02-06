@@ -101,6 +101,12 @@ function Home({ userName, handleNameChange, handleNameSubmit, nameSubmitted }) {
       <Button variant="outlined" component={Link} to="/leaderboard" className="leaderboard-button">
         View Leaderboard
       </Button>
+      <Box className="scoring-info">
+        <Typography variant="h6">How the Scoring System Works</Typography>
+        <Typography variant="body1">
+          You earn 1 point for each second remaining when you select the correct answer. The timer only has to do with scoring, the quiz will not move onto the next question before you answer.
+        </Typography>
+      </Box>
     </Box>
   );
 }

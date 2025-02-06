@@ -1,3 +1,17 @@
+Log - 2/6/25
+    [X] Possibly move the return to home button out of the quiz card as it can be miscontrued as the next question button.
+    [1] A page/infobox about how the scoring system works (1 point for each second remaining when the answer is selected) was added to the homepage
+    [2] Show your score as you progress through a quiz.
+
+Log - 2/5/25
+    [X] User testing happened today!
+        [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
+        [X] Maybe clarify the rules for the games and scoring
+        [X] Clarify the time remaning to be only for points
+        [X] Possibly move the return to home button out of the quiz card as it can be miscontrued as the next question button.
+        [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
+    [X] User testing went great!
+
 Log - 1/29/25
     [X] Evened all topics out to 50 questions per.
     [X] Tried to remove all duplicate questions
@@ -47,18 +61,42 @@ Log - 1/13/25
 
 Backlog
     - Bugs
-        (None at the moment)
+        [1] Big empty space on the leaderboard page above the title
     - Features
-        [X] Add more questions
+        [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
+        [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
+        [X] Maybe clarify the rules for the games and scoring
+        [X] Clarify the time remaning to be only for points
+        [?] Progress bar similar to david's quizzing app.
+        [?] Add some info on each topic to show how many questions there are before you begin.
+        [2] A prompt before a quiz begins to ask the user if they are ready to begin, instead of throwing them straight into the quiz.
+        [3] Maybe adding feedback on the questions so that the user understands why they are correct/incorrect
+        [3] More categories?
+        [1] Better name for the website
+        [3] Sound effects?
+        [1] Change the title and icon for the whole site.
+        [?] Add more questions
+        [?] Further CSS updates, website still looks a bit bland with the white background.
+            - Mobile compatibility?
+            - Breakpoints
+        [?] Maybe some sort of dynamic/interesting background behind the quiz and homescreen.
     - Technical Debt
-        [X] Rename index.js in questions folder to be something more descriptive
-        [X] Make the quiz question components into js
-        [X] Refactor QuizPage, seperate the questions into their own JSX (or JSON?) file so as to prevent clutter.
-        [X] Do QuizPage and Leaderboard need to be in a components folder?
-        [X] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
+        [?] Clarify 1-3 or ? for new features on the backlog
+        [3] Refactor JSON out of source code onto ec2
+        [2] Refactor QuizPage
+        [1] Remove the random blogpost that was supposed to be for the JSON demonstration (it has no content)
+        [1] Rename index.js in questions folder to be something more descriptive
+        [1] Make the quiz question components into json files?
+        [1] Do QuizPage and Leaderboard need to be in a components folder?
+        [1] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
 
 Completed
     - Features
+        [X] Possibly move the return to home button out of the quiz card as it can be miscontrued as the next question button.
+        [1] A page/infobox about how the scoring system works (1 point for each second remaining when the answer is selected) was added to the homepage
+        [2] Show your score as you progress through a quiz.
+        [X] Question counter (when in a quiz)
+        [X] Removed all duplicate questions
         [X] An animation which pops up to show you how many points you gained from answering a question.
         [X] Capitlization on the buttons so that they are not in All-Caps
         [X] CSS & UI/UX updates, website looks atrocious right now
@@ -69,6 +107,7 @@ Completed
         [X] Clarify the quiz categories to be more specific, make sure they actually relate to the PMP
         [X] Create a Scenario based question category
     - Technical Debt
+        [X] Refactor QuizPage, seperate the questions into their own JSX (or JSON?) file so as to prevent clutter.
         [X] Refactored the questions into seperate files.
         [X] Weird error on line #5 in App.jsx that should probably be dealt with at some point even though it doesnt cause any issues (yet)
         [X] Refactor the full quiz category? Seems like I should not have to have a 4th category in the code. Should be able to pull from the original 3 categories.
