@@ -1,3 +1,12 @@
+Log - 2/11/25
+    [X] Added the Auto Animate blogpost to showcase the library and its features
+    [1] Remove the random blogpost that was supposed to be for the JSON demonstration (it has no content)
+    [1] Big empty space on the leaderboard page above the title
+    [1] Rename index.js in questions folder to be something more descriptive
+
+Log - 2/10/25
+    [X] Added the Auto Animate library to my app for later use.    
+
 Log - 2/6/25
     [X] Possibly move the return to home button out of the quiz card as it can be miscontrued as the next question button.
     [1] A page/infobox about how the scoring system works (1 point for each second remaining when the answer is selected) was added to the homepage
@@ -61,7 +70,7 @@ Log - 1/13/25
 
 Backlog
     - Bugs
-        [1] Big empty space on the leaderboard page above the title
+        None at the moment
     - Features
         [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
@@ -81,17 +90,20 @@ Backlog
             - Breakpoints
         [?] Maybe some sort of dynamic/interesting background behind the quiz and homescreen.
     - Technical Debt
+        [X] Standardize JSON to accept/push out questions to the class.
+            - Allow Multiple Topics
+            - Allow Multiple correct Answers
+            - Explanations
         [?] Clarify 1-3 or ? for new features on the backlog
         [3] Refactor JSON out of source code onto ec2
         [2] Refactor QuizPage
-        [1] Remove the random blogpost that was supposed to be for the JSON demonstration (it has no content)
-        [1] Rename index.js in questions folder to be something more descriptive
         [1] Make the quiz question components into json files?
         [1] Do QuizPage and Leaderboard need to be in a components folder?
         [1] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
 
 Completed
     - Features
+        [X] Added the Auto Animate library to my app for later use.
         [X] Possibly move the return to home button out of the quiz card as it can be miscontrued as the next question button.
         [1] A page/infobox about how the scoring system works (1 point for each second remaining when the answer is selected) was added to the homepage
         [2] Show your score as you progress through a quiz.
@@ -107,11 +119,14 @@ Completed
         [X] Clarify the quiz categories to be more specific, make sure they actually relate to the PMP
         [X] Create a Scenario based question category
     - Technical Debt
+        [1] Rename index.js in questions folder to be something more descriptive
+        [1] Remove the random blogpost that was supposed to be for the JSON demonstration (it has no content)
         [X] Refactor QuizPage, seperate the questions into their own JSX (or JSON?) file so as to prevent clutter.
         [X] Refactored the questions into seperate files.
         [X] Weird error on line #5 in App.jsx that should probably be dealt with at some point even though it doesnt cause any issues (yet)
         [X] Refactor the full quiz category? Seems like I should not have to have a 4th category in the code. Should be able to pull from the original 3 categories.
     - Bug
+        [1] Big empty space on the leaderboard page above the title
         [X] The incorrect/correct indicator does not appear on the last question as the quiz summary and leaderboard popup overtakes it
 
 Question generation prompt: Here is my current JSON of 40 waterfall questions for my quizzing app. They are all relating to the waterfall framework, and are meant to help you study for the PMBOK 7th edition PMP exam. I would like for you to create 10 new questions that fit the JSON format, and make sure that they are not redundant/repeated questions.

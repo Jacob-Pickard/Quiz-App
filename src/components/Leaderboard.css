@@ -1,13 +1,13 @@
 /* Container for the leaderboard */
 .leaderboard-container {
   text-align: center;
-  padding: 2rem;
+  padding: 1em;
   background-color: #f0f2f5;
-  min-height: 100vh;
+  min-height: auto; /* Remove min-height */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Center the container vertically */
   font-family: 'Roboto', sans-serif;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,8 +19,8 @@
 .leaderboard-category {
   width: 100%;
   max-width: 600px;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  margin-bottom: 1rem; /* Reduced margin */
+  padding: 1rem; /* Reduced padding */
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -62,7 +62,7 @@
 .leaderboard-buttons {
   display: flex;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem; /* Reduced margin-top */
 }
 
 /* Styling for buttons within the leaderboard */
