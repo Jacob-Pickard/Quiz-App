@@ -23,6 +23,7 @@ function QuizPage({ userName }) {
   const [answerFeedback, setAnswerFeedback] = useState('');
   const [pointsGained, setPointsGained] = useState(0);
   const [showPoints, setShowPoints] = useState(false);
+  const [showExplanation, setShowExplanation] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const navigate = useNavigate();
 
@@ -38,11 +39,14 @@ function QuizPage({ userName }) {
 
   // Start the countdown timer
   useEffect(() => {
-    const countdown = setInterval(() => {
-      setTimer((prev) => (prev > 0 ? prev - 1 : prev));
-    }, 1000);
+    let countdown;
+    if (!quizLocked) {
+      countdown = setInterval(() => {
+        setTimer((prev) => (prev > 0 ? prev - 1 : prev));
+      }, 1000);
+    }
     return () => clearInterval(countdown);
-  }, [currentQuestion]);
+  }, [currentQuestion, quizLocked]);
 
   // Save the score to the leaderboard when the quiz is completed
   useEffect(() => {
@@ -61,8 +65,8 @@ function QuizPage({ userName }) {
   const handleAnswer = (index) => {
     if (quizLocked) return;
 
-    const correctAnswer = shuffledQuestions[currentQuestion].answer;
-    if (index === correctAnswer) {
+    const correctAnswers = shuffledQuestions[currentQuestion].answers;
+    if (correctAnswers.includes(index)) {
       const points = timer;
       setScore((prev) => prev + points);
       setPointsGained(points);
@@ -73,18 +77,21 @@ function QuizPage({ userName }) {
     }
 
     setQuizLocked(true);
+    setShowExplanation(true);
+  };
 
-    setTimeout(() => {
-      setQuizLocked(false);
-      setAnswerFeedback('');
-      setShowPoints(false);
-      if (currentQuestion < shuffledQuestions.length - 1) {
-        setCurrentQuestion((prev) => prev + 1);
-        setTimer(30);
-      } else {
-        setCompleted(true);
-      }
-    }, 2000);
+  // Handle next question
+  const handleNextQuestion = () => {
+    setQuizLocked(false);
+    setAnswerFeedback('');
+    setShowPoints(false);
+    setShowExplanation(false);
+    if (currentQuestion < shuffledQuestions.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
+      setTimer(30);
+    } else {
+      setCompleted(true);
+    }
   };
 
   // Render the quiz page
@@ -142,6 +149,7 @@ function QuizPage({ userName }) {
                 variant="contained"
                 onClick={() => handleAnswer(index)}
                 sx={{ m: 1 }}
+                disabled={quizLocked}
               >
                 {option}
               </Button>
@@ -166,6 +174,26 @@ function QuizPage({ userName }) {
             >
               +{pointsGained} points!
             </Typography>
+          )}
+          {showExplanation && (
+            <Typography
+              variant="body1"
+              sx={{
+                mt: 2,
+                fontStyle: 'italic',
+              }}
+            >
+              Explanation: {shuffledQuestions[currentQuestion].explanation}
+            </Typography>
+          )}
+          {quizLocked && (
+            <Button
+              variant="contained"
+              onClick={handleNextQuestion}
+              sx={{ mt: 2 }}
+            >
+              Next Question
+            </Button>
           )}
         </CardContent>
       </Card>

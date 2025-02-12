@@ -3,6 +3,7 @@ import { Box, Typography, Button, Card, CardContent } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import './BlogPage.css';
+import autoAnimate from '@formkit/auto-animate';
 
 function BlogPage() {
   return (
@@ -11,8 +12,7 @@ function BlogPage() {
         Blog Posts
       </Typography>
       <BlogPost title="Auto Animate Showcase" date="February 11, 2025">
-        Auto Animate is a react library that allows you to atuomatically create smooth animations in your UI, with very little effort. Below is a demonstration of a very basic form of it within my code.
-        <br/><br/>
+        Auto Animate is a react library that allows you to atuomatically create smooth animations in your UI, with very little effort. Below is a demonstration of a very basic form of it within my code. It is also now used whenever you click on the see less/see more buttons on the blog posts.
         <AutoAnimateShowcase/>
       </BlogPost>
       <BlogPost title="Understanding Agile Methodology" date="January 22, 2025">
@@ -33,6 +33,7 @@ function BlogPage() {
 
 function BlogPost({ title, date, children }) {
   const [expanded, setExpanded] = useState(false);
+  const [parent] = useAutoAnimate({ easing: 'ease-in-out' });
 
   // Toggle the expanded state of the blog post
   const toggleExpand = () => {
@@ -48,8 +49,8 @@ function BlogPost({ title, date, children }) {
         <Typography variant="body2" color="textSecondary" gutterBottom>
           {date}
         </Typography>
-        <Typography variant="body1" className={expanded ? 'expanded' : 'collapsed'}>
-          {children}
+        <Typography ref={parent} variant="body1">
+          {expanded && children}
         </Typography>
         <Button onClick={toggleExpand} className="toggle-button">
           {expanded ? 'Read Less' : 'Read More'}
@@ -61,24 +62,21 @@ function BlogPost({ title, date, children }) {
 
 function AutoAnimateShowcase () {
   const [items, setItems] = useState([0, 1, 2])
-  const [parent, enableAnimations] = useAutoAnimate(/* optional config */)
+  const [parent, enableAnimations] = useAutoAnimate({ easing: 'ease-in-out' })
   const add = () => setItems([...items, items.length])
   const remove = () => setItems(items.slice(0, -1))
   const clear = () => setItems([])
 
-
   return <>
-  <ul ref={parent}>
-    {items.map(
-      item => <ul key={item}>{ item }</ul>
-    )}
-  </ul>
-  <button onClick={add}>Add number</button>
-  <button onClick={() => enableAnimations(false)}>Disable</button>
-  <button onClick={() => enableAnimations(true)}>Enable</button>
-  <button onClick={remove}>Remove last number</button>
-  <button onClick={clear}>Clear</button>
-</>
+    <ul ref={parent}>
+      {items.map(
+        item => <li key={item}>{ item }</li>
+      )}
+    </ul>
+    <button onClick={add}>Add number</button>
+    <button onClick={remove}>Remove last number</button>
+    <button onClick={clear}>Clear</button>
+  </>
 }
 
 export default BlogPage;

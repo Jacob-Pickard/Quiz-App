@@ -1,5 +1,13 @@
+Log - 2/12/25
+    [X] Standardized my JSONs
+    [X] Updated my program to accept the standardized JSON
+    [X] Added explanations to my JSON
+    [X] Explanations are now displayed when a user selects an answer.
+    [X] Updated the quiz logic so that you have to click a next question button instead of the quiz rolling over to the next question after 2 seconds.
+    [X] CSS Updates on the leaderboard page
+
 Log - 2/11/25
-    [X] Added the Auto Animate blogpost to showcase the library and its features
+    [X] Added the Auto Animate blogpost to showcase the library and its features, also happens when you click read more/read less
     [1] Remove the random blogpost that was supposed to be for the JSON demonstration (it has no content)
     [1] Big empty space on the leaderboard page above the title
     [1] Rename index.js in questions folder to be something more descriptive
@@ -74,12 +82,9 @@ Backlog
     - Features
         [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
-        [X] Maybe clarify the rules for the games and scoring
-        [X] Clarify the time remaning to be only for points
         [?] Progress bar similar to david's quizzing app.
         [?] Add some info on each topic to show how many questions there are before you begin.
         [2] A prompt before a quiz begins to ask the user if they are ready to begin, instead of throwing them straight into the quiz.
-        [3] Maybe adding feedback on the questions so that the user understands why they are correct/incorrect
         [3] More categories?
         [1] Better name for the website
         [3] Sound effects?
@@ -90,19 +95,20 @@ Backlog
             - Breakpoints
         [?] Maybe some sort of dynamic/interesting background behind the quiz and homescreen.
     - Technical Debt
-        [X] Standardize JSON to accept/push out questions to the class.
-            - Allow Multiple Topics
-            - Allow Multiple correct Answers
-            - Explanations
         [?] Clarify 1-3 or ? for new features on the backlog
         [3] Refactor JSON out of source code onto ec2
         [2] Refactor QuizPage
-        [1] Make the quiz question components into json files?
         [1] Do QuizPage and Leaderboard need to be in a components folder?
         [1] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
 
 Completed
     - Features
+        [X] Updated my program to accept the standardized JSON
+        [X] Added explanations to my JSON
+        [X] Explanations are now displayed when a user selects an answer.
+        [X] Updated the quiz logic so that you have to click a next question button instead of the quiz rolling over to the next question after 2 seconds.
+        [X] Clarify the time remaning to be only for points
+        [1] A page/infobox about how the scoring system works (1 point for each second remaining when the answer is selected) was added to the homepage
         [X] Added the Auto Animate library to my app for later use.
         [X] Possibly move the return to home button out of the quiz card as it can be miscontrued as the next question button.
         [1] A page/infobox about how the scoring system works (1 point for each second remaining when the answer is selected) was added to the homepage
@@ -119,6 +125,7 @@ Completed
         [X] Clarify the quiz categories to be more specific, make sure they actually relate to the PMP
         [X] Create a Scenario based question category
     - Technical Debt
+        [1] Standardized my JSONs
         [1] Rename index.js in questions folder to be something more descriptive
         [1] Remove the random blogpost that was supposed to be for the JSON demonstration (it has no content)
         [X] Refactor QuizPage, seperate the questions into their own JSX (or JSON?) file so as to prevent clutter.

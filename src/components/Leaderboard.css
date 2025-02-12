@@ -2,7 +2,7 @@
 .leaderboard-container {
   text-align: center;
   padding: 1em;
-  background-color: #f0f2f5;
+  background-color: #ffffff; /* Match the card background color */
   min-height: auto; /* Remove min-height */
   display: flex;
   flex-direction: column;
