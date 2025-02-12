@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography, Card, CardContent } from '@mui/material';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import questions from './questions/questionsHandler';
+import questions from './questions/questionsHandler.jsx';
 import './QuizPage.css';
 
 // Function to shuffle an array

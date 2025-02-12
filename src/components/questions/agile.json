@@ -1,4 +1,4 @@
-const agileQuestions = [
+[
   {
     "topics": ["Agile"],
     "question": "What is the main focus of Agile project management?",
@@ -649,6 +649,4 @@ const agileQuestions = [
     "explanation": "The purpose of a Scrum of Scrums meeting is to ensure alignment and coordination across multiple Scrum teams, helping them work together effectively.",
     "source": "ChatGPT"
   }
-];
-
-export default agileQuestions;
+]

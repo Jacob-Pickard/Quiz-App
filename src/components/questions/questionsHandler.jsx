@@ -1,6 +1,6 @@
-import agileQuestions from './agile';
-import waterfallQuestions from './waterfall';
-import scenarioQuestions from './scenario';
+import agileQuestions from './agile.json';
+import waterfallQuestions from './waterfall.json';
+import scenarioQuestions from './scenario.json';
 
 const questions = {
   agile: agileQuestions,

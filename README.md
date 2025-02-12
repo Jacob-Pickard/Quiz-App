@@ -5,6 +5,11 @@ Log - 2/12/25
     [X] Explanations are now displayed when a user selects an answer.
     [X] Updated the quiz logic so that you have to click a next question button instead of the quiz rolling over to the next question after 2 seconds.
     [X] CSS Updates on the leaderboard page
+In class
+    [X] Tried to get a google maps react component setup, not willing to pay for the service though.
+    [X] Realizing that auto animate kind of sucks, maybe need to try a new library.
+    [1] changed my question filetypes from .js > .json
+    [1] changed questionsHandler.js to .jsx just for consistency
 
 Log - 2/11/25
     [X] Added the Auto Animate blogpost to showcase the library and its features, also happens when you click read more/read less
@@ -80,6 +85,7 @@ Backlog
     - Bugs
         None at the moment
     - Features
+        [X] Implement multiple answer questions
         [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
         [?] Progress bar similar to david's quizzing app.
@@ -95,6 +101,7 @@ Backlog
             - Breakpoints
         [?] Maybe some sort of dynamic/interesting background behind the quiz and homescreen.
     - Technical Debt
+        [X] Realizing that auto animate kind of sucks, maybe need to try a new library.
         [?] Clarify 1-3 or ? for new features on the backlog
         [3] Refactor JSON out of source code onto ec2
         [2] Refactor QuizPage
@@ -125,6 +132,8 @@ Completed
         [X] Clarify the quiz categories to be more specific, make sure they actually relate to the PMP
         [X] Create a Scenario based question category
     - Technical Debt
+        [1] changed questionsHandler.js to .jsx just for consistency
+        [1] changed my question filetypes from .js > .json
         [1] Standardized my JSONs
         [1] Rename index.js in questions folder to be something more descriptive
         [1] Remove the random blogpost that was supposed to be for the JSON demonstration (it has no content)

@@ -1,4 +1,4 @@
-const scenarioQuestions = [
+[
   {
     "topics": ["Scenario"],
     "question": "During a project, a stakeholder requests a change. What is the first step?",
@@ -649,6 +649,4 @@ const scenarioQuestions = [
     "explanation": "Analyzing the impact on the project and developing a revised plan helps to address the budget cut and keep the project on track.",
     "source": "ChatGPT"
   }
-];
-
-export default scenarioQuestions;
+]

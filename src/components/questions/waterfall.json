@@ -1,4 +1,4 @@
-const waterfallQuestions = [
+[
   {
     "topics": ["Waterfall"],
     "question": "Which of the following is a characteristic of the Waterfall model?",
@@ -644,6 +644,4 @@ const waterfallQuestions = [
     "explanation": "A key assumption of the Waterfall model is that all phases must be completed before moving to the next, ensuring a linear and sequential approach.",
     "source": "ChatGPT"
   }
-];
-
-export default waterfallQuestions;
+]
