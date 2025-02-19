@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Typography, Card, CardContent } from '@mui/material';
+import { Box, Button, Typography, Card, CardContent, LinearProgress } from '@mui/material';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import questions from './questions/questionsHandler.jsx';
 import './QuizPage.css';
@@ -25,6 +25,7 @@ function QuizPage({ userName }) {
   const [showPoints, setShowPoints] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
+  const [quizStarted, setQuizStarted] = useState(false);
   const navigate = useNavigate();
 
   // Shuffle questions when the component mounts
@@ -94,6 +95,38 @@ function QuizPage({ userName }) {
     }
   };
 
+  // Calculate progress percentage
+  const progress = ((currentQuestion + 1) / shuffledQuestions.length) * 100;
+
+  // Render the quiz start prompt
+  if (!quizStarted) {
+    return (
+      <Box className="quiz-container">
+        <Card className="info-card">
+          <CardContent>
+            <Typography variant="h4">Ready to Start the Quiz?</Typography>
+            <Typography variant="h6">
+              Category: {category}
+            </Typography>
+            <Typography variant="h6">
+              Number of Questions: {questions[category]?.length || 0}
+            </Typography>
+            <Button
+              variant="contained"
+              onClick={() => setQuizStarted(true)}
+              sx={{ mt: 2 }}
+            >
+              Start Quiz
+            </Button>
+          </CardContent>
+        </Card>
+        <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
+          Back to Home
+        </Button>
+      </Box>
+    );
+  }
+
   // Render the quiz page
   if (!shuffledQuestions.length) {
     return (
@@ -135,6 +168,7 @@ function QuizPage({ userName }) {
           <Typography variant="h5" className="quiz-timer">
             Time Remaining: {timer} seconds
           </Typography>
+          <LinearProgress variant="determinate" value={progress} sx={{ mt: 2 }} />
         </CardContent>
       </Card>
       <Card className="quiz-card">

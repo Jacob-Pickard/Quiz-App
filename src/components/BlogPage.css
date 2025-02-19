@@ -1,7 +1,7 @@
 .blog-container {
   text-align: center;
   padding: 2rem;
-  background-color: #f0f2f5;
+  background-color: #f7f9fc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
   max-width: 200px;
   padding: 1rem;
   font-size: 1.1rem;
-  background-color: #1976d2;
+  background-color: #007bff;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -39,7 +39,7 @@
 }
 
 .home-button:hover {
-  background-color: #155a9c;
+  background-color: #0056b3;
   transform: translateY(-3px);
 }
 
@@ -56,7 +56,7 @@
 
 .toggle-button {
   margin-top: 1rem;
-  background-color: #1976d2;
+  background-color: #007bff;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -66,6 +66,23 @@
 }
 
 .toggle-button:hover {
-  background-color: #155a9c;
+  background-color: #0056b3;
   transform: translateY(-3px);
+}
+
+/* Breakpoints for mobile compatibility */
+@media (max-width: 600px) {
+  .blog-card {
+    padding: 1rem;
+  }
+
+  .home-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .toggle-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
 }

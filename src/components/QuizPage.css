@@ -15,7 +15,7 @@
   padding: 16px;
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  background-color: #1976d2;
+  background-color: #007bff;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -25,7 +25,7 @@
 
 /* Hover effect for the buttons */
 .quiz-card .MuiButton-root:hover {
-  background-color: #155a9c;
+  background-color: #0056b3;
   transform: translateY(-3px);
 }
 
@@ -39,17 +39,17 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin-top: 1rem;
-  color: green;
+  color: #28a745;
 }
 
 /* Styles for incorrect feedback text */
 .quiz-card .feedback.incorrect {
-  color: red;
+  color: #dc3545;
 }
 
 /* Styles for points gained text */
 .points-gained {
-  color: green;
+  color: #28a745;
   font-weight: bold;
   animation: pop-up 1s ease-in-out;
 }
@@ -57,14 +57,14 @@
 /* Styles for the current score display */
 .current-score {
   font-weight: bold;
-  color: #1976d2;
+  color: #007bff;
 }
 
 /* Styles for the quiz timer */
 .quiz-timer {
   margin-top: 0.5rem;
   font-weight: bold;
-  color: #d32f2f;
+  color: #dc3545;
 }
 
 /* Keyframes for pop-up animation */
@@ -108,7 +108,7 @@
 .current-score {
   margin-bottom: 1rem;
   font-weight: bold;
-  color: #1976d2;
+  color: #007bff;
   background-color: #e3f2fd;
   padding: 1rem;
   border-radius: 8px;
@@ -122,7 +122,7 @@
 .quiz-timer {
   margin-top: 1rem;
   font-weight: bold;
-  color: #d32f2f;
+  color: #dc3545;
   background-color: #ffebee;
   padding: 1rem;
   border-radius: 8px;
@@ -143,5 +143,32 @@
 
 .quiz-container .MuiButton-outlined:hover {
   transform: translateY(-3px);
+}
+
+/* Breakpoints for mobile compatibility */
+@media (max-width: 600px) {
+  .quiz-card {
+    padding: 10px;
+  }
+
+  .quiz-card .MuiButton-root {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .info-card {
+    padding: 0.5rem;
+  }
+
+  .current-score,
+  .quiz-timer {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .quiz-container .MuiButton-outlined {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
 }
 

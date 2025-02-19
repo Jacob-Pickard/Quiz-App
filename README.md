@@ -1,3 +1,9 @@
+Log - 2/19/25
+    [?] Progress bar similar to david's quizzing app.
+    [2] A prompt before a quiz begins to ask the user if they are ready to begin, instead of throwing them straight into the quiz.
+    [?] Add some info on each topic to show how many questions there are before you begin.
+    [?] Further CSS updates, added some breakpoints and better mobile compatibility.
+
 Log - 2/12/25
     [X] Standardized my JSONs
     [X] Updated my program to accept the standardized JSON
@@ -85,20 +91,15 @@ Backlog
     - Bugs
         None at the moment
     - Features
+        [X] Update the website's colors
         [X] Implement multiple answer questions
         [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
-        [?] Progress bar similar to david's quizzing app.
-        [?] Add some info on each topic to show how many questions there are before you begin.
-        [2] A prompt before a quiz begins to ask the user if they are ready to begin, instead of throwing them straight into the quiz.
         [3] More categories?
         [1] Better name for the website
         [3] Sound effects?
         [1] Change the title and icon for the whole site.
         [?] Add more questions
-        [?] Further CSS updates, website still looks a bit bland with the white background.
-            - Mobile compatibility?
-            - Breakpoints
         [?] Maybe some sort of dynamic/interesting background behind the quiz and homescreen.
     - Technical Debt
         [X] Realizing that auto animate kind of sucks, maybe need to try a new library.
@@ -110,6 +111,10 @@ Backlog
 
 Completed
     - Features
+        [?] Further CSS updates, added some breakpoints and better mobile compatibility.
+        [?] Add some info on each topic to show how many questions there are before you begin.
+        [2] A prompt before a quiz begins to ask the user if they are ready to begin, instead of throwing them straight into the quiz.
+        [?] Progress bar similar to david's quizzing app.
         [X] Updated my program to accept the standardized JSON
         [X] Added explanations to my JSON
         [X] Explanations are now displayed when a user selects an answer.

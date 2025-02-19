@@ -11,6 +11,10 @@ function BlogPage() {
       <Typography variant="h4" gutterBottom>
         Blog Posts
       </Typography>
+      <BlogPost title="Backend Demonstration" date="February 19, 2025">
+        May not demonstrate the data correctly if my backend server is not running. This is a demonstration of fetching data from a backend server and displaying it on the frontend. The data is fetched from a server that I have running on an EC2 instance. The data is fetched from the server and displayed below.
+        <JsonGrabber/>
+      </BlogPost>
       <BlogPost title="Auto Animate Showcase" date="February 11, 2025">
         Auto Animate is a react library that allows you to atuomatically create smooth animations in your UI, with very little effort. Below is a demonstration of a very basic form of it within my code. It is also now used whenever you click on the see less/see more buttons on the blog posts.
         <AutoAnimateShowcase/>
@@ -58,6 +62,43 @@ function BlogPost({ title, date, children }) {
       </CardContent>
     </Card>
   );
+}
+
+function JsonGrabber() {
+  const [grabbedData, setData] = React.useState([])
+
+  React.useEffect(() => {
+    fetch("http://52.20.151.181/questions")
+      .then((response) => {
+          return response.json();
+      })
+      .then((data) => {
+          console.log("Fetched data:", data);
+          setData(data) // Assuming the data is in data
+      })
+  }, [])
+
+  return(
+    <div>
+      {Array.isArray(grabbedData) && grabbedData.length > 0 ? (
+        grabbedData.map((item, index) => (
+          <div key={index}>
+            <Typography variant="h6">Question: {item.question}</Typography>
+            <Typography variant="body1">Topic: {item.topics}</Typography>
+            <Typography variant="body2">Options:</Typography>
+            <ul>
+              {item.options.map((option, idx) => (
+                <li key={idx}>{option}</li>
+              ))}
+              Answer(s): {item.answers}     
+            </ul>
+          </div>
+        ))
+      ) : (
+        <Typography variant="body1">No data available</Typography>
+      )}
+    </div>
+  )
 }
 
 function AutoAnimateShowcase () {
