@@ -1,3 +1,14 @@
+Log - 2/26/25
+    [X] Added a topic query paramater to my server.js to allow a user to search by just question topics eg: http://ip_here/questions?topic=agile
+    [X] Added all of my questions to my mysql using insertquestions.js and uploading my json file to my server. 
+
+Log - 2/25/25
+    [X] Updated the server to use a enviornemtn variables file
+    [X] Used a connection pool to optimize the performance of the server
+    [X] Added some basic error handling on the server
+    [X] Implemented winston for logging on my server. Shows live in the command line as well as in 2 logging files
+    [X] Implemented cacheing for the mysql using NodeCache, these also show up via winston which is quite nice.
+
 Log - 2/19/25
     [?] Progress bar similar to david's quizzing app.
     [2] A prompt before a quiz begins to ask the user if they are ready to begin, instead of throwing them straight into the quiz.
@@ -91,7 +102,9 @@ Backlog
     - Bugs
         None at the moment
     - Features
-        [X] Update the website's colors
+        [X] Add the rest of my questions to the Backend
+        [X] Mobile conversion?
+        [X] Update the website's colors/Background
         [X] Implement multiple answer questions
         [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
