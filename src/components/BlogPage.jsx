@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Typography, Button, Card, CardContent } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
-import './BlogPage.css';
+import '../styles/BlogPage.css';
 import autoAnimate from '@formkit/auto-animate';
 
 function BlogPage() {

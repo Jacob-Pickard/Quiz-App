@@ -1,9 +1,13 @@
+Log - 3/3/25
+    [X] Reworked a lot of the file structuring. Determined that blogpage.jsx, leaderboard.jsx, and quizpage.jsx are all components that could be used elsewhere so they remained in /components. Moved all css files into a /styles folder. Also left the questions folder within components. Updated all the import statments to adapt to this filestructuring
+    [X] Changed the name, title, and .svg of the website to be better than just "PMBOK Quiz app"
+
 Log - 2/26/25
     [X] Added a topic query paramater to my server.js to allow a user to search by just question topics eg: http://ip_here/questions?topic=agile
     [X] Added all of my questions to my mysql using insertquestions.js and uploading my json file to my server. 
 
 Log - 2/25/25
-    [X] Updated the server to use a enviornemtn variables file
+    [X] Updated the server to use a enviornment variables file
     [X] Used a connection pool to optimize the performance of the server
     [X] Added some basic error handling on the server
     [X] Implemented winston for logging on my server. Shows live in the command line as well as in 2 logging files
@@ -102,16 +106,13 @@ Backlog
     - Bugs
         None at the moment
     - Features
-        [X] Add the rest of my questions to the Backend
         [X] Mobile conversion?
         [X] Update the website's colors/Background
-        [X] Implement multiple answer questions
+        [X] Implement multiple answer questions?
         [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
         [3] More categories?
-        [1] Better name for the website
         [3] Sound effects?
-        [1] Change the title and icon for the whole site.
         [?] Add more questions
         [?] Maybe some sort of dynamic/interesting background behind the quiz and homescreen.
     - Technical Debt
@@ -119,11 +120,12 @@ Backlog
         [?] Clarify 1-3 or ? for new features on the backlog
         [3] Refactor JSON out of source code onto ec2
         [2] Refactor QuizPage
-        [1] Do QuizPage and Leaderboard need to be in a components folder?
-        [1] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
 
 Completed
     - Features
+        [1] Change the title and icon for the whole site.
+        [1] Better name for the website
+        [X] Add the rest of my questions to the Backend
         [?] Further CSS updates, added some breakpoints and better mobile compatibility.
         [?] Add some info on each topic to show how many questions there are before you begin.
         [2] A prompt before a quiz begins to ask the user if they are ready to begin, instead of throwing them straight into the quiz.
@@ -150,6 +152,7 @@ Completed
         [X] Clarify the quiz categories to be more specific, make sure they actually relate to the PMP
         [X] Create a Scenario based question category
     - Technical Debt
+        [1] Seperate everything out into appropriate folders. Just improve the overall filestructuring!
         [1] changed questionsHandler.js to .jsx just for consistency
         [1] changed my question filetypes from .js > .json
         [1] Standardized my JSONs

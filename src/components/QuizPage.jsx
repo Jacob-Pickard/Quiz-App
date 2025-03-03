@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Button, Typography, Card, CardContent, LinearProgress } from '@mui/material';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import questions from './questions/questionsHandler.jsx';
-import './QuizPage.css';
+import '../styles/QuizPage.css';
 
 // Function to shuffle an array
 function shuffleArray(array) {

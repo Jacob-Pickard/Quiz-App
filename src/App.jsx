@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme, CssBaseline, Box, Button, Typography, Grid 
 import QuizPage from './components/QuizPage';
 import Leaderboard from './components/Leaderboard';
 import BlogPage from './components/BlogPage';
-import './App.css';
+import './styles/App.css';
 
 // Create a theme with primary and secondary colors
 const theme = createTheme({
@@ -38,7 +38,7 @@ function App() {
       <Router basename="/Quiz-App">
         <Box className="app-container">
           <Typography variant="h2" gutterBottom>
-            PMBOK Quizzing Website
+            PMP Quiz Central
           </Typography>
           <Routes>
             <Route path="/" element={<Home userName={userName} handleNameChange={handleNameChange} handleNameSubmit={handleNameSubmit} nameSubmitted={nameSubmitted} />} />

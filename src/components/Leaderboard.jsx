@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, List, ListItem, Button, Paper } from '@mui/material';
 import { Link } from 'react-router-dom';
-import './Leaderboard.css';
-import questions from './questions/questionsHandler';
+import '../styles/Leaderboard.css';
 
 function Leaderboard() {
   const [scores, setScores] = useState([]);
