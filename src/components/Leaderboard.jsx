@@ -1,21 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, List, ListItem, Button, Paper } from '@mui/material';
 import { Link } from 'react-router-dom';
+import ProgressGraph from './ProgressGraph';
 import '../styles/Leaderboard.css';
 
 function Leaderboard() {
   const [scores, setScores] = useState([]);
+  const [graphData, setGraphData] = useState([]);
 
   // Load scores from localStorage when the component mounts
   useEffect(() => {
     const storedScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
     setScores(storedScores);
+
+    // Prepare data for the graph
+    const data = storedScores.map((entry, index) => ({
+      attempt: index + 1,
+      correctAnswers: entry.correctAnswers,
+      score: entry.score,
+    }));
+    setGraphData(data);
   }, []);
 
   // Clear scores from localStorage and state
   const clearScores = () => {
     localStorage.removeItem('leaderboard');
     setScores([]);
+    setGraphData([]);
   };
 
   const categories = ['agile', 'waterfall', 'full', 'scenario'];
@@ -48,6 +59,9 @@ function Leaderboard() {
         </Button>
         <Button onClick={clearScores} variant="contained" color="secondary">
           Clear Scores
+        </Button>
+        <Button component={Link} to="/charts" variant="outlined">
+          View Progress Charts
         </Button>
       </Box>
     </Box>

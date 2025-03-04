@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme, CssBaseline, Box, Button, Typography, Grid 
 import QuizPage from './components/QuizPage';
 import Leaderboard from './components/Leaderboard';
 import BlogPage from './components/BlogPage';
+import ChartsPage from './components/ChartsPage';
 import './styles/App.css';
 
 // Create a theme with primary and secondary colors
@@ -38,13 +39,16 @@ function App() {
       <Router basename="/Quiz-App">
         <Box className="app-container">
           <Typography variant="h2" gutterBottom>
-            PMP Quiz Central
+            <Link to="/" className="title-link">
+              PMP Quiz Central
+            </Link>
           </Typography>
           <Routes>
             <Route path="/" element={<Home userName={userName} handleNameChange={handleNameChange} handleNameSubmit={handleNameSubmit} nameSubmitted={nameSubmitted} />} />
             <Route path="/quiz/:category" element={<QuizPage userName={userName} />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/charts" element={<ChartsPage />} />
           </Routes>
         </Box>
       </Router>
@@ -100,6 +104,9 @@ function Home({ userName, handleNameChange, handleNameSubmit, nameSubmitted }) {
       </Button>
       <Button variant="outlined" component={Link} to="/leaderboard" className="leaderboard-button">
         View My Scores
+      </Button>
+      <Button variant="outlined" component={Link} to="/charts" className="leaderboard-button">
+        View Progress Charts
       </Button>
       <Box className="scoring-info">
         <Typography variant="h6">How the Scoring System Works</Typography>

@@ -149,6 +149,18 @@
   transform: translateY(-5px);
 }
 
+.title-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.title-link:hover {
+  color: #1976d2; /* Change color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
 /* Breakpoints for mobile compatibility */
 @media (max-width: 600px) {
   .home-button-grid {

@@ -1,7 +1,10 @@
 Log - 3/4/25
-        [X] Changed the name of the leaderboard to "My scores" as you cant compete against anyone but yourself without backend implementation
-        [X] Add a date and time counter to the leaderboard to show your progression as you finish the quizzes. (Just log when the data is input)
-        [X] Added a "Correct questions" tracker that displays when the quiz is complete and on the leaderboard.
+    [X] Changed the name of the leaderboard to "My scores" as you cant compete against anyone but yourself without backend implementation
+    [X] Add a date and time counter to the leaderboard to show your progression as you finish the quizzes. (Just log when the data is input)
+    [X] Added a "Correct questions" tracker that displays when the quiz is complete and on the leaderboard.
+    [X] Added rechart library to demonstrate to the user how they are progressing through a visual medium.
+    [X] Added a seperate page and button to view these graphs, as well as a corresponding css file.
+    [X] Made the title of the website a home button, added CSS to make it more obvious that it can be clicked.
 
 Log - 3/3/25
     [X] Reworked a lot of the file structuring. Determined that blogpage.jsx, leaderboard.jsx, and quizpage.jsx are all components that could be used elsewhere so they remained in /components. Moved all css files into a /styles folder. Also left the questions folder within components. Updated all the import statments to adapt to this filestructuring
@@ -130,6 +133,12 @@ Backlog
 
 Completed
     - Features
+        [X] Changed the name of the leaderboard to "My scores" as you cant compete against anyone but yourself without backend implementation
+        [X] Add a date and time counter to the leaderboard to show your progression as you finish the quizzes. (Just log when the data is input)
+        [X] Added a "Correct questions" tracker that displays when the quiz is complete and on the leaderboard.
+        [X] Added rechart library to demonstrate to the user how they are progressing through a visual medium.
+        [X] Added a seperate page and button to view these graphs, as well as a corresponding css file.
+        [X] Made the title of the website a home button, added CSS to make it more obvious that it can be clicked.
         [1] Change the title and icon for the whole site.
         [1] Better name for the website
         [X] Add the rest of my questions to the Backend
