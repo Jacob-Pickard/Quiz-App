@@ -99,7 +99,7 @@ function Home({ userName, handleNameChange, handleNameSubmit, nameSubmitted }) {
         Blog
       </Button>
       <Button variant="outlined" component={Link} to="/leaderboard" className="leaderboard-button">
-        View Leaderboard
+        View My Scores
       </Button>
       <Box className="scoring-info">
         <Typography variant="h6">How the Scoring System Works</Typography>

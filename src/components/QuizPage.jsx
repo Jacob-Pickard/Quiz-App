@@ -26,6 +26,7 @@ function QuizPage({ userName }) {
   const [showExplanation, setShowExplanation] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [quizStarted, setQuizStarted] = useState(false);
+  const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   const navigate = useNavigate();
 
   // Shuffle questions when the component mounts
@@ -52,15 +53,15 @@ function QuizPage({ userName }) {
   // Save the score to the leaderboard when the quiz is completed
   useEffect(() => {
     if (completed) {
-      const finalUserName = userName || prompt('Enter your name for the leaderboard:');
+      const finalUserName = userName || prompt('Enter your name for the scoreboard:');
       if (finalUserName) {
-        const newScore = { name: finalUserName, score, category };
+        const newScore = { name: finalUserName, score, category, date: new Date().toISOString(), correctAnswers: correctAnswersCount };
         const storedScores = JSON.parse(localStorage.getItem('leaderboard')) || [];
         storedScores.push(newScore);
         localStorage.setItem('leaderboard', JSON.stringify(storedScores));
       }
     }
-  }, [completed, score, category, userName]);
+  }, [completed, score, category, userName, correctAnswersCount]);
 
   // Handle answer selection
   const handleAnswer = (index) => {
@@ -73,6 +74,7 @@ function QuizPage({ userName }) {
       setPointsGained(points);
       setShowPoints(true);
       setAnswerFeedback('Correct!');
+      setCorrectAnswersCount((prev) => prev + 1);
     } else {
       setAnswerFeedback('Incorrect!');
     }
@@ -147,8 +149,9 @@ function QuizPage({ userName }) {
       <Box>
         <Typography variant="h4">Quiz Completed!</Typography>
         <Typography>Your Score: {score}</Typography>
+        <Typography>Correct Answers: {correctAnswersCount}</Typography>
         <Button component={Link} to="/leaderboard" variant="contained" sx={{ mt: 2 }}>
-          View Leaderboard
+          View My Scores
         </Button>
         <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
           Back to Home

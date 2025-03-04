@@ -1,3 +1,8 @@
+Log - 3/4/25
+        [X] Changed the name of the leaderboard to "My scores" as you cant compete against anyone but yourself without backend implementation
+        [X] Add a date and time counter to the leaderboard to show your progression as you finish the quizzes. (Just log when the data is input)
+        [X] Added a "Correct questions" tracker that displays when the quiz is complete and on the leaderboard.
+
 Log - 3/3/25
     [X] Reworked a lot of the file structuring. Determined that blogpage.jsx, leaderboard.jsx, and quizpage.jsx are all components that could be used elsewhere so they remained in /components. Moved all css files into a /styles folder. Also left the questions folder within components. Updated all the import statments to adapt to this filestructuring
     [X] Changed the name, title, and .svg of the website to be better than just "PMBOK Quiz app"
@@ -106,6 +111,9 @@ Backlog
     - Bugs
         None at the moment
     - Features
+        [X] Font for the title at the top of the page should be changed maybe, pretty boring and also the title itself is very out of place it feels like.
+        [X] Enhancing the styling of the site. I feel that the styles are super underwhelming and bland. This feels like the biggest thing holding my website back.
+        [X] Fix the formatting on the active quizpage to always fit all the important quiz elements on the page. The title takes up too much space and leads to the user battling with scrolling.
         [X] Mobile conversion?
         [X] Update the website's colors/Background
         [X] Implement multiple answer questions?
@@ -113,7 +121,6 @@ Backlog
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
         [3] More categories?
         [3] Sound effects?
-        [?] Add more questions
         [?] Maybe some sort of dynamic/interesting background behind the quiz and homescreen.
     - Technical Debt
         [X] Realizing that auto animate kind of sucks, maybe need to try a new library.

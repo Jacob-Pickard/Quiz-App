@@ -23,7 +23,7 @@ function Leaderboard() {
   return (
     <Box className="leaderboard-container">
       <Typography variant="h4" gutterBottom>
-        Leaderboard
+        My Scores
       </Typography>
       {categories.map((category) => (
         <Paper elevation={3} className="leaderboard-category" key={category}>
@@ -36,7 +36,7 @@ function Leaderboard() {
               .sort((a, b) => b.score - a.score)
               .map((entry, index) => (
                 <ListItem key={index}>
-                  {index + 1}. {entry.name} - {entry.score} points
+                  {index + 1}. {entry.name} - {entry.score} points - {entry.correctAnswers} correct answers - {new Date(entry.date).toLocaleString()}
                 </ListItem>
               ))}
           </List>
