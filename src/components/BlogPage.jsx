@@ -28,7 +28,7 @@ function BlogPage() {
       <BlogPost title="Scenario-Based Project Management" date="January 20, 2025">
         Scenario-based project management involves creating detailed scenarios to anticipate potential challenges and opportunities in a project. 
       </BlogPost>
-      <Button component={Link} to="/" variant="contained" className="home-button">
+      <Button component={Link} to="/" variant="contained" className="home-button" color="primary">
         Back to Home
       </Button>
     </Box>
@@ -56,7 +56,7 @@ function BlogPost({ title, date, children }) {
         <Typography ref={parent} variant="body1">
           {expanded && children}
         </Typography>
-        <Button onClick={toggleExpand} className="toggle-button">
+        <Button onClick={toggleExpand} className="toggle-button" color="primary">
           {expanded ? 'Read Less' : 'Read More'}
         </Button>
       </CardContent>

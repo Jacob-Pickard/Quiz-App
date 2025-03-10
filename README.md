@@ -1,3 +1,13 @@
+Log - 3/10/25
+    [X] Finally got tailwind installed correctly!
+    [X] Changed file language detection to tailwind so that I stop getting "problems" that pop up when editing in tailwind.
+    [X] Changed color scheming slightly
+    [X] Hover effects are more consistent throughout the website    
+
+Log - 3/7/25
+    [X] Added a common styles file to standardize CSS
+    [X] Struggled with making many changes though. Also tried tailwind and this would not work for whatever reason, and I couldnt make it work either. Rough day in terms of development progress, just had to walk away at a certain point.
+
 Log - 3/4/25
     [X] Changed the name of the leaderboard to "My scores" as you cant compete against anyone but yourself without backend implementation
     [X] Add a date and time counter to the leaderboard to show your progression as you finish the quizzes. (Just log when the data is input)

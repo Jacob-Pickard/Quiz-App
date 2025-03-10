@@ -122,7 +122,7 @@ function QuizPage({ userName }) {
             </Button>
           </CardContent>
         </Card>
-        <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
+        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
           Back to Home
         </Button>
       </Box>
@@ -153,7 +153,7 @@ function QuizPage({ userName }) {
         <Button component={Link} to="/leaderboard" variant="contained" sx={{ mt: 2 }}>
           View My Scores
         </Button>
-        <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
+        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
           Back to Home
         </Button>
       </Box>
@@ -234,7 +234,7 @@ function QuizPage({ userName }) {
           )}
         </CardContent>
       </Card>
-      <Button component={Link} to="/" variant="outlined" sx={{ mt: 2 }}>
+      <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
         Back to Home
       </Button>
     </Box>

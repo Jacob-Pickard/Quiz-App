@@ -1,0 +1,48 @@
+/* Define CSS variables for colors */
+:root {
+  --primary-color: #6200ea;
+  --secondary-color: #03dac6;
+  --background-color: linear-gradient(135deg, #f5f5f5, #e3f2fd);
+  --text-color: #212121;
+  --hover-color: #3700b3;
+  --card-background-color: #ffffff;
+  --card-shadow-color: rgba(0, 0, 0, 0.2);
+  --button-hover-transform: translateY(-3px);
+  --button-hover-transition: background-color 0.3s, transform 0.3s;
+  --box-shadow: 0 4px 8px var(--card-shadow-color);
+}
+
+/* Common button styles */
+.button, .MuiButton-root {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  transition: var(--button-hover-transition);
+  text-transform: capitalize;
+  box-shadow: var(--box-shadow);
+}
+
+.button:hover, .MuiButton-root:hover {
+  @apply bg-[var(--hover-color)] scale-105;
+}
+
+/* Common card styles */
+.card, .info-card, .quiz-card, .leaderboard-category, .chart-paper, .blog-card {
+  background: var(--card-background-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Common container styles */
+.container, .quiz-container, .leaderboard-container, .charts-container, .blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--background-color);
+}

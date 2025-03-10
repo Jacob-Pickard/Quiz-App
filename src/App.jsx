@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { ThemeProvider, createTheme, CssBaseline, Box, Button, Typography, Grid } from '@mui/material';
+import { CssBaseline, Box, Button, Typography, Grid } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import QuizPage from './components/QuizPage';
 import Leaderboard from './components/Leaderboard';
 import BlogPage from './components/BlogPage';
 import ChartsPage from './components/ChartsPage';
 import './styles/App.css';
 
-// Create a theme with primary and secondary colors
 const theme = createTheme({
   palette: {
-    primary: { main: '#1976d2' },
-    secondary: { main: '#dc004e' },
+    primary: {
+      main: '#6200ea',
+    },
+    secondary: {
+      main: '#03dac6',
+    },
   },
 });
 
@@ -68,7 +72,7 @@ function Home({ userName, handleNameChange, handleNameSubmit, nameSubmitted }) {
           onChange={handleNameChange}
           className="name-input"
         />
-        <Button type="submit" variant="contained" className="submit-name-button">
+        <Button type="submit" variant="contained" color="primary" className="submit-name-button">
           Submit Name
         </Button>
         {nameSubmitted && (
@@ -79,33 +83,54 @@ function Home({ userName, handleNameChange, handleNameSubmit, nameSubmitted }) {
       </form>
       <div className="home-button-grid">
         <Grid item xs={6} sm={6} md={6}>
-          <Button variant="contained" component={Link} to="/quiz/agile" className="MuiButton-root">
+          <Button variant="contained" color="primary" component={Link} to="/quiz/agile" className="quiz-button">
             Agile Quiz
           </Button>
         </Grid>
         <Grid item xs={6} sm={6} md={6}>
-          <Button variant="contained" component={Link} to="/quiz/waterfall" className="MuiButton-root">
+          <Button variant="contained" color="primary" component={Link} to="/quiz/waterfall" className="quiz-button">
             Waterfall Quiz
           </Button>
         </Grid>
         <Grid item xs={6} sm={6} md={6}>
-          <Button variant="contained" component={Link} to="/quiz/scenario" className="MuiButton-root">
+          <Button variant="contained" color="primary" component={Link} to="/quiz/scenario" className="quiz-button">
             Scenario-Based Questions
           </Button>
         </Grid>
         <Grid item xs={6} sm={6} md={6}>
-          <Button variant="contained" component={Link} to="/quiz/full" className="MuiButton-root">
+          <Button variant="contained" color="primary" component={Link} to="/quiz/full" className="quiz-button">
             Full Test
           </Button>
         </Grid>
       </div>
-      <Button variant="contained" component={Link} to="/blog" className="blog-button">
+      <Button
+        variant="contained"
+        color="primary"
+        component={Link}
+        to="/blog"
+        className="blog-button"
+        style={{ marginBottom: '6px' }}
+      >
         Blog
       </Button>
-      <Button variant="outlined" component={Link} to="/leaderboard" className="leaderboard-button">
+      <Button
+        variant="contained"
+        color="primary"
+        component={Link}
+        to="/leaderboard"
+        className="leaderboard-button"
+        style={{ marginBottom: '6px' }}
+      >
         View My Scores
       </Button>
-      <Button variant="outlined" component={Link} to="/charts" className="leaderboard-button">
+      <Button
+        variant="contained"
+        color="primary"
+        component={Link}
+        to="/charts"
+        className="charts-button"
+        style={{ marginBottom: '6px' }}
+      >
         View Progress Charts
       </Button>
       <Box className="scoring-info">

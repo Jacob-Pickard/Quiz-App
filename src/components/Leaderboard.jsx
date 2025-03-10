@@ -60,7 +60,7 @@ function Leaderboard() {
         <Button onClick={clearScores} variant="contained" color="secondary">
           Clear Scores
         </Button>
-        <Button component={Link} to="/charts" variant="outlined">
+        <Button component={Link} to="/charts" variant="contained">
           View Progress Charts
         </Button>
       </Box>
