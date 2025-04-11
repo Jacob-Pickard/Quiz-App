@@ -1,3 +1,11 @@
+Log - 3/11/25
+    [X] Color Palette changes, along with various css changes to make this work
+    [X] Animations for the quizcard to fade in
+    [X] Finally fixed the issue where some elements would not change color, was because these elements were MUI elements and they have a default color which overrides your own css.
+    [X] Fixed animations on the quizpage
+    [X] Added a tailblock for the blogpost page.
+    [X] Charts page overhaul
+
 Log - 3/10/25
     [X] Finally got tailwind installed correctly!
     [X] Changed file language detection to tailwind so that I stop getting "problems" that pop up when editing in tailwind.
@@ -125,10 +133,8 @@ Backlog
         None at the moment
     - Features
         [X] Font for the title at the top of the page should be changed maybe, pretty boring and also the title itself is very out of place it feels like.
-        [X] Enhancing the styling of the site. I feel that the styles are super underwhelming and bland. This feels like the biggest thing holding my website back.
         [X] Fix the formatting on the active quizpage to always fit all the important quiz elements on the page. The title takes up too much space and leads to the user battling with scrolling.
         [X] Mobile conversion?
-        [X] Update the website's colors/Background
         [X] Implement multiple answer questions?
         [X] Host the leaderboard in an API with usernames being a max of 3 characters to prevent abuse?
         [X] Base 5-10 points for getting a question correct, on top of a bonus for time reminaing?
@@ -143,6 +149,8 @@ Backlog
 
 Completed
     - Features
+        [X] Enhancing the styling of the site. I feel that the styles are super underwhelming and bland. This feels like the biggest thing holding my website back.
+        [X] Update the website's colors/Background
         [X] Changed the name of the leaderboard to "My scores" as you cant compete against anyone but yourself without backend implementation
         [X] Add a date and time counter to the leaderboard to show your progression as you finish the quizzes. (Just log when the data is input)
         [X] Added a "Correct questions" tracker that displays when the quiz is complete and on the leaderboard.

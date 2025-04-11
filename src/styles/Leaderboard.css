@@ -5,10 +5,10 @@
 :root {
   --primary-color: #6200ea;
   --secondary-color: #03dac6;
-  --background-color: #f5f5f5;
-  --text-color: #212121;
+  --background-color: #121212; /* Dark gray for background */
+  --text-color: #ffffff; /* White text for better contrast */
   --hover-color: #3700b3;
-  --card-background-color: #ffffff;
+  --card-background-color: #1e1e1e; /* Complementary gray for card background */
   --card-shadow-color: rgba(0, 0, 0, 0.2);
   --button-hover-transform: translateY(-3px);
   --button-hover-transition: background-color 0.3s, transform 0.3s;
@@ -17,12 +17,12 @@
 
 /* Container for the leaderboard */
 .leaderboard-container {
-  @apply flex flex-col items-center justify-center p-8 bg-gray-100 max-w-3xl mx-auto text-center rounded-lg shadow-lg font-sans text-gray-800;
+  @apply flex flex-col items-center justify-center p-8 bg-[var(--background-color)] max-w-3xl mx-auto text-center rounded-lg shadow-lg font-sans text-white outline outline-[var(--primary-color)];
 }
 
 /* Individual category within the leaderboard */
 .leaderboard-category {
-  @apply max-w-2xl mb-4 p-4 bg-[var(--card-background-color)] rounded-xl shadow-lg transition-transform;
+  @apply max-w-2xl mb-4 p-4 bg-[var(--card-background-color)] rounded-xl shadow-lg transition-transform border-2 border-[var(--primary-color)] outline outline-[var(--primary-color)];
 }
 
 /* Hover effect for leaderboard category */
@@ -32,17 +32,17 @@
 
 /* Heading within the leaderboard category */
 .leaderboard-category h5 {
-  @apply mb-4 text-2xl text-gray-800;
+  @apply mb-4 text-2xl text-white;
 }
 
 /* Unordered list within the leaderboard category */
 .leaderboard-category ul {
-  @apply list-none p-0;
+  @apply list-none p-0 text-white;
 }
 
 /* List items within the leaderboard category */
 .leaderboard-category li {
-  @apply py-2 text-lg border-b border-gray-300 capitalize;
+  @apply py-2 text-lg border-b border-gray-300 capitalize text-white;
 }
 
 /* Remove border from the last list item */
@@ -57,7 +57,7 @@
 
 /* Styling for buttons within the leaderboard */
 .leaderboard-buttons .MuiButton-root {
-  @apply py-3 px-6 text-lg bg-[var(--primary-color)] text-white border-none rounded-lg transition-transform;
+  @apply py-3 px-6 text-lg bg-[var(--primary-color)] text-white border-none rounded-lg transition-transform outline outline-[var(--primary-color)];
 }
 
 /* Hover effect for buttons within the leaderboard */

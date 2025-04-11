@@ -5,10 +5,10 @@
 :root {
   --primary-color: #6200ea;
   --secondary-color: #03dac6;
-  --background-color: #f5f5f5;
-  --text-color: #212121;
+  --background-color: #121212; /* Dark gray for background */
+  --text-color: #ffffff; /* White text for better contrast */
   --hover-color: #3700b3;
-  --card-background-color: #ffffff;
+  --card-background-color: #1e1e1e; /* Complementary gray for card background */
   --card-shadow-color: rgba(0, 0, 0, 0.2);
   --button-hover-transform: translateY(-3px);
   --button-hover-transition: background-color 0.3s, transform 0.3s;
@@ -16,15 +16,42 @@
 }
 
 .charts-container {
-  @apply flex flex-col items-center justify-center p-8 bg-gray-100 text-gray-800;
+  @apply flex flex-col items-center justify-center p-8 bg-[var(--background-color)] text-gray-800;
 }
 
 .chart-row {
   @apply flex flex-row justify-center items-center gap-8 w-full;
+  @apply p-4;
 }
 
 .chart-paper {
-  @apply flex-1 p-5 mb-5 bg-[var(--card-background-color)] rounded-xl shadow-lg;
+  @apply flex-1 p-5 mb-5 bg-[var(--card-background-color)] rounded-xl shadow-lg border-2 border-[var(--primary-color)];
+  min-width: 300px;
+  max-width: 600px;
+  height: 40vh; /* Further adjust height to remove large white space */
+  overflow: hidden; /* Prevent clipping */
+}
+
+.chart-title {
+  height: 50px; /* Set a fixed height for the title area */
+  margin-bottom: 15px; /* Add more spacing below the title */
+  padding-bottom: 10px; /* Add padding below the title */
+}
+
+.category-card {
+  @apply mb-8 w-full;
+}
+
+.button-paper {
+  @apply p-4 mb-4 bg-[var(--card-background-color)] rounded-xl shadow-lg border-2 border-[var(--primary-color)];
+}
+
+.toggle-button {
+  @apply w-full bg-[var(--primary-color)] text-white border-none rounded-lg transition-transform;
+}
+
+.toggle-button:hover {
+  @apply bg-[var(--hover-color)] scale-105;
 }
 
 /* Styling for buttons within the charts page */
@@ -35,4 +62,14 @@
 /* Hover effect for buttons within the charts page */
 .charts-container .MuiButton-root:hover {
   @apply bg-[var(--hover-color)] scale-105;
+}
+
+/* Ensure proper padding for the charts */
+.chart-paper .recharts-wrapper {
+  padding-bottom: 10px; /* Further reduce padding to prevent clipping */
+}
+
+/* Ensure labels are visible */
+.chart-paper .recharts-label {
+  @apply text-white;
 }

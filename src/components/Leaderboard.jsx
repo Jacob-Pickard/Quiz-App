@@ -33,12 +33,12 @@ function Leaderboard() {
 
   return (
     <Box className="leaderboard-container">
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom style={{ color: 'var(--text-color)' }}>
         My Scores
       </Typography>
       {categories.map((category) => (
-        <Paper elevation={3} className="leaderboard-category" key={category}>
-          <Typography variant="h5">
+        <Paper elevation={3} className="leaderboard-category" key={category} style={{ backgroundColor: 'var(--card-background-color)', color: 'var(--text-color)' }}>
+          <Typography variant="h5" style={{ color: 'var(--text-color)' }}>
             {category.toUpperCase()} Scores
           </Typography>
           <List>
@@ -46,7 +46,7 @@ function Leaderboard() {
               .filter((entry) => entry.category === category)
               .sort((a, b) => b.score - a.score)
               .map((entry, index) => (
-                <ListItem key={index}>
+                <ListItem key={index} style={{ color: 'var(--text-color)' }}>
                   {index + 1}. {entry.name} - {entry.score} points - {entry.correctAnswers} correct answers - {new Date(entry.date).toLocaleString()}
                 </ListItem>
               ))}
@@ -54,13 +54,13 @@ function Leaderboard() {
         </Paper>
       ))}
       <Box className="leaderboard-buttons">
-        <Button component={Link} to="/" variant="contained">
+        <Button component={Link} to="/" variant="contained" style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}>
           Back to Home
         </Button>
         <Button onClick={clearScores} variant="contained" color="secondary">
           Clear Scores
         </Button>
-        <Button component={Link} to="/charts" variant="contained">
+        <Button component={Link} to="/charts" variant="contained" style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}>
           View Progress Charts
         </Button>
       </Box>

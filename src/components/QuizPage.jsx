@@ -103,8 +103,8 @@ function QuizPage({ userName }) {
   // Render the quiz start prompt
   if (!quizStarted) {
     return (
-      <Box className="quiz-container">
-        <Card className="info-card">
+      <Box className="quiz-container animate-expand">
+        <Card className="info-card" style={{ backgroundColor: 'var(--card-background-color)', color: 'var(--text-color)' }}>
           <CardContent>
             <Typography variant="h4">Ready to Start the Quiz?</Typography>
             <Typography variant="h6">
@@ -117,12 +117,13 @@ function QuizPage({ userName }) {
               variant="contained"
               onClick={() => setQuizStarted(true)}
               sx={{ mt: 2 }}
+              style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}
             >
               Start Quiz
             </Button>
           </CardContent>
         </Card>
-        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
+        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }} style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}>
           Back to Home
         </Button>
       </Box>
@@ -136,7 +137,7 @@ function QuizPage({ userName }) {
         <Typography variant="h4" color="error">
           Invalid quiz category.
         </Typography>
-        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
+        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }} style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}>
           Back to Home
         </Button>
       </Box>
@@ -150,10 +151,10 @@ function QuizPage({ userName }) {
         <Typography variant="h4">Quiz Completed!</Typography>
         <Typography>Your Score: {score}</Typography>
         <Typography>Correct Answers: {correctAnswersCount}</Typography>
-        <Button component={Link} to="/leaderboard" variant="contained" sx={{ mt: 2 }}>
+        <Button component={Link} to="/leaderboard" variant="contained" sx={{ mt: 2 }} style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}>
           View My Scores
         </Button>
-        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
+        <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }} style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}>
           Back to Home
         </Button>
       </Box>
@@ -162,8 +163,8 @@ function QuizPage({ userName }) {
 
   // Render the current question
   return (
-    <Box className="quiz-container">
-      <Card className="info-card">
+    <Box className="quiz-container animate-expand">
+      <Card className="info-card" style={{ backgroundColor: 'var(--card-background-color)', color: 'var(--text-color)' }}>
         <CardContent>
           <Typography variant="h4" className="current-score">
             Current Score: {score}
@@ -174,7 +175,7 @@ function QuizPage({ userName }) {
           <LinearProgress variant="determinate" value={progress} sx={{ mt: 2 }} />
         </CardContent>
       </Card>
-      <Card className="quiz-card">
+      <Card className="quiz-card animate-fade-in" style={{ backgroundColor: 'var(--card-background-color)', color: 'var(--text-color)' }}>
         <CardContent>
           <Typography variant="h5">
             Question {currentQuestion + 1} of {shuffledQuestions.length}: {shuffledQuestions[currentQuestion].question}
@@ -187,6 +188,7 @@ function QuizPage({ userName }) {
                 onClick={() => handleAnswer(index)}
                 sx={{ m: 1 }}
                 disabled={quizLocked}
+                style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}
               >
                 {option}
               </Button>
@@ -200,6 +202,7 @@ function QuizPage({ userName }) {
                 mt: 2,
                 fontWeight: 'bold',
               }}
+              className={`feedback animate-fade-in ${answerFeedback === 'Correct!' ? '' : 'incorrect'}`}
             >
               {answerFeedback}
             </Typography>
@@ -207,9 +210,9 @@ function QuizPage({ userName }) {
           {showPoints && (
             <Typography
               variant="h4"
-              className="points-gained"
+              className={answerFeedback === 'Correct!' ? 'points-gained' : 'points-lost'}
             >
-              +{pointsGained} points!
+              {answerFeedback === 'Correct!' ? `+${pointsGained} points!` : ''}
             </Typography>
           )}
           {showExplanation && (
@@ -219,6 +222,7 @@ function QuizPage({ userName }) {
                 mt: 2,
                 fontStyle: 'italic',
               }}
+              className="animate-expand"
             >
               Explanation: {shuffledQuestions[currentQuestion].explanation}
             </Typography>
@@ -228,13 +232,14 @@ function QuizPage({ userName }) {
               variant="contained"
               onClick={handleNextQuestion}
               sx={{ mt: 2 }}
+              style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}
             >
               Next Question
             </Button>
           )}
         </CardContent>
       </Card>
-      <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
+      <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }} style={{ backgroundColor: 'var(--primary-color)', color: 'var(--text-color)' }}>
         Back to Home
       </Button>
     </Box>

@@ -5,12 +5,12 @@
 :root {
   --primary-color: #6200ea;
   --secondary-color: #03dac6;
-  --background-color: #f5f5f5;
-  --text-color: #212121;
+  --background-color: #121212; /* Dark gray for background */
+  --text-color: #ffffff; /* White text for better contrast */
   --success-color: #388e3c;
   --error-color: #d32f2f;
   --hover-color: #3700b3;
-  --card-background-color: #ffffff;
+  --card-background-color: #1e1e1e; /* Complementary gray for card background */
   --card-shadow-color: rgba(0, 0, 0, 0.2);
   --button-hover-transform: translateY(-3px);
   --button-hover-transition: background-color 0.3s, transform 0.3s;
@@ -19,7 +19,9 @@
 
 /* Styles for the quiz card container */
 .quiz-card {
-  @apply max-w-xl mx-auto p-5 text-center bg-[var(--card-background-color)] text-[var(--text-color)] rounded-xl shadow-lg;
+  @apply max-w-xl mx-auto p-5 text-center bg-[var(--card-background-color)] text-[var(--text-color)] rounded-xl shadow-lg border-2 border-[var(--primary-color)];
+  transition: max-height 0.5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
 }
 
 /* Styles for the buttons inside the quiz card */
@@ -39,17 +41,26 @@
 
 /* Styles for the feedback text */
 .quiz-card .feedback {
-  @apply text-xl font-bold mt-4 text-[var(--success-color)];
+  @apply text-xl font-bold mt-4;
+  animation: fade-in 0.5s ease-in-out, correct-answer 0.5s ease-in-out;
 }
 
 /* Styles for incorrect feedback text */
 .quiz-card .feedback.incorrect {
   @apply text-[var(--error-color)];
+  animation: fade-in 0.5s ease-in-out, incorrect-answer 0.5s ease-in-out;
 }
 
 /* Styles for points gained text */
 .points-gained {
-  @apply text-[var(--success-color)] font-bold animate-pulse;
+  @apply text-[var(--success-color)] font-bold;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+/* Styles for points lost text */
+.points-lost {
+  @apply text-[var(--error-color)] font-bold;
+  animation: fade-in 0.5s ease-in-out;
 }
 
 /* Styles for the current score display */
@@ -65,11 +76,12 @@
 /* Container for the quiz page */
 .quiz-container {
   @apply flex flex-col items-center justify-center p-8 bg-[var(--background-color)];
+  animation: expand 0.5s ease-in-out;
 }
 
 /* Styles for the info card containing score and timer */
 .info-card {
-  @apply max-w-xl mb-4 p-4 bg-[var(--card-background-color)] rounded-xl shadow-lg text-center w-full;
+  @apply max-w-xl mb-4 p-4 bg-[var(--card-background-color)] rounded-xl shadow-lg text-center w-full border-2 border-[var(--primary-color)];
 }
 
 /* Styles for the current score display */
@@ -90,6 +102,70 @@
 /* Hover effect for the "Back to Home" button */
 .quiz-container .MuiButton-outlined:hover {
   @apply bg-[var(--hover-color)] scale-105;
+}
+
+/* Animation for fade-in effect */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation for expanding explanation box */
+@keyframes expand {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-expand {
+  animation: expand 0.5s ease-in-out;
+}
+
+/* Animation for correct answer */
+@keyframes correct-answer {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation for incorrect answer */
+@keyframes incorrect-answer {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Keyframes for pop-up animation */
+@keyframes pop-up {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Breakpoints for mobile compatibility */
@@ -115,4 +191,3 @@
     @apply text-sm p-2;
   }
 }
-
