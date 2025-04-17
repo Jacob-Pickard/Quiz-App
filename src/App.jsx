@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { CssBaseline, Box, Button, Typography, Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import QuizPage from './components/QuizPage';
@@ -40,7 +40,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router basename="/Quiz-App">
+      <Router>
         <Box className="app-container">
           <Typography variant="h2" gutterBottom>
             <Link to="/" className="title-link">
